@@ -5,4 +5,10 @@
     <string name="main_menu_question">What would you like to do?</string>
     <string name="main_menu_create_list">Create new shopping list</string>
     <string name="main_menu_browse_shops">Browse shops</string>
+    <string name="list_creator_header">Type in item name or find in list</string>
+    <string name="list_creator_text_input">Item name</string>
+    <string name="list_creator_input_default">Type here</string>
+    <string name="cancel_button_text">Cancel</string>
+    <string name="preview_button_text">Preview list</string>
+    <string name="choose_shop_button_text">Choose shop</string>
 </resources>

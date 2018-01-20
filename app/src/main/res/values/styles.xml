@@ -8,4 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="item_input_style">
+        <item name="colorControlNormal">@color/item_input_color</item>
+    </style>
+
 </resources>
