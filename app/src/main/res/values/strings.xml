@@ -11,4 +11,5 @@
     <string name="cancel_button_text">Cancel</string>
     <string name="preview_button_text">Preview list</string>
     <string name="choose_shop_button_text">Choose shop</string>
+    <string name="default_text">Default</string>
 </resources>

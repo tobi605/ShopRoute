@@ -11,4 +11,5 @@
     <color name="preview_button_color">#f0f0f0</color>
     <color name="preview_button_text_color">#999999</color>
     <color name="choose_shop_color">#0ebb0e</color>
+    <color name="list_item_text_color">#888888</color>
 </resources>
