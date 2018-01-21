@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">ShopRoute</string>
     //texts
+    <string name="splash_screen_logo_text">Splash screen logo</string>
     <string name="main_menu_subtext">SMTH</string>
     <string name="main_menu_question">What would you like to do?</string>
     <string name="main_menu_create_list">Create new shopping list</string>
