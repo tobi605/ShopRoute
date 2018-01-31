@@ -27,28 +27,7 @@
         android:layout_height="0dp"
         android:background="@color/white"
         android:layout_weight="2"
-        android:id="@+id/shop_browse_list">
-
+        android:id="@+id/shop_browse_list"
+        >
     </ListView>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:orientation="horizontal"
-            android:layout_centerInParent="true">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/cancel_button"
-                android:text="@string/back_button_text"
-                android:textColor="@color/white"
-                android:padding="7dp"
-                />
-
-        </LinearLayout>
-    </RelativeLayout>
-
 </LinearLayout>

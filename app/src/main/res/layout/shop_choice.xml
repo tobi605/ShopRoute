@@ -42,23 +42,11 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="35dp"
-                android:layout_marginEnd="35dp"
-                android:background="@drawable/cancel_button"
-                android:text="@string/cancel_button_text"
-                android:textColor="@color/white"
-                />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="35dp"
-                android:layout_marginStart="35dp"
                 android:background="@drawable/choose_shop_button"
                 android:text="@string/show_route_button_text"
                 android:textColor="@color/white"
                 android:padding="7dp"
                 />
-
         </LinearLayout>
     </RelativeLayout>
 
