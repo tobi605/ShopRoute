@@ -15,7 +15,4 @@ public interface ProductDao {
 
     @Query("SELECT * FROM products WHERE product_name LIKE :name LIMIT 1")
     Product findByName(String name);
-
-    @Query("SELECT * FROM products WHERE type LIKE :type")
-    List<Product> getAllOfType(String type);
 }
