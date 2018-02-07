@@ -20,9 +20,7 @@ public class Product {
     @ColumnInfo(name = "product_name")
     private String productName;
 
-    public int getUid() {
-        return uid;
-    }
+    public int getUid() {return uid; }
 
     public void setUid(int uid) {
         this.uid = uid;
