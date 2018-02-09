@@ -14,11 +14,8 @@ public class Product {
     @PrimaryKey
     private int uid;
 
-    @ColumnInfo(name = "type")
-    private String type;
-
-    @ColumnInfo(name = "product_name")
-    private String productName;
+    @ColumnInfo(name = "NAME")
+    private String name;
 
     public int getUid() {return uid; }
 
@@ -26,19 +23,11 @@ public class Product {
         this.uid = uid;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public String getProductName() {
-        return productName;
+        return name;
     }
 
     public void setProductName(String productName) {
-        this.productName = productName;
+        this.name= productName;
     }
 }

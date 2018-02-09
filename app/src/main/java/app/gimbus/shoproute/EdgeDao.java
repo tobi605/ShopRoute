@@ -5,14 +5,13 @@ import android.arch.persistence.room.Query;
 
 import java.util.List;
 
-    /**
- * Created by tobi6 on 07.02.2018.
+/**
+ * Created by tobi6 on 09.02.2018.
  */
 
 @Dao
-public interface ShelfDao {
+public interface EdgeDao {
 
-    @Query("SELECT * FROM nodes")
-    List<Shelf> getAllShelves();
-
+    @Query("SELECT * FROM edges")
+    List<Edge> getAllEdges();
 }

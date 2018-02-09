@@ -11,7 +11,7 @@ public class ShelfNode {
     private List<ShelfNode> neighbours;
     private List<Product> products;
 
-    public ShelfNode(Shelf shelf ,List<ShelfNode> neighbours) {
+    public ShelfNode(Shelf shelf) {
         this.shelf = shelf;
     }
 
