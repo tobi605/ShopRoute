@@ -3,19 +3,19 @@ package app.gimbus.shoproute;
 import android.arch.persistence.room.Room;
 import android.content.Context;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 /**
  * Created by tobi6 on 07.02.2018.
  */
 
-public class Shop {
-    ArrayList<ShelfNode> shelves;
-    ArrayList<Product> products;
-    AppDatabase database;
+class Shop {
+    private Vector<ShelfNode> shelves;
+    private Vector<Product> products;
+    private AppDatabase database;
 
-    public Shop(String databaseName, Context context){
+    Shop(String databaseName, Context context){
         this.database = Room.databaseBuilder(context, AppDatabase.class, "main").build();
         List<Shelf> shelfList = database.shelfDao().getAllShelves();
         int iter = 0;
@@ -23,13 +23,20 @@ public class Shop {
              ) {
             shelves.add(new ShelfNode(s));
         }
+        shelfList = null;
         List<Edge> edgeList = database.edgeDao().getAllEdges();
         for (Edge e : edgeList
              ) {
-
+                shelves.get(e.getFromNode()).addNeighbour(shelves.get(e.getToNode()));
+                shelves.get(e.getToNode()).addNeighbour(shelves.get(e.getFromNode()));
         }
+        edgeList = null;
+        List<Product> loadProducts = database.productDao().getAll();
+        products.addAll(loadProducts);
+        loadProducts = null;
     }
 
-
-
+    Product[] getProducts(){
+        return (Product[]) products.toArray();
+    }
 }
