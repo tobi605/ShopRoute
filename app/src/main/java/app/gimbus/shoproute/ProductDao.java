@@ -13,6 +13,6 @@ public interface ProductDao {
     @Query("SELECT * from products")
     List<Product> getAll();
 
-    @Query("SELECT * FROM products WHERE product_name LIKE :name LIMIT 1")
+    @Query("SELECT * FROM products WHERE NAME LIKE :name LIMIT 1")
     Product findByName(String name);
 }

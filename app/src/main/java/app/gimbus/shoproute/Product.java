@@ -23,12 +23,12 @@ public class Product {
         this.uid = uid;
     }
 
-    public String getProductName() {
+    public String getName() {
         return name;
     }
 
-    public void setProductName(String productName) {
-        this.name= productName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String toString(){return this.name;}

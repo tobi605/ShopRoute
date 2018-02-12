@@ -1,7 +1,8 @@
 package app.gimbus.shoproute;
 
-import android.arch.persistence.room.Room;
 import android.content.Context;
+
+import com.huma.room_for_asset.RoomAsset;
 
 import java.util.List;
 import java.util.Vector;
@@ -16,7 +17,7 @@ class Shop {
     private AppDatabase database;
 
     Shop(String databaseName, Context context){
-        this.database = Room.databaseBuilder(context, AppDatabase.class, "main").build();
+        this.database = RoomAsset.databaseBuilder(context, AppDatabase.class, databaseName).build();
         List<Shelf> shelfList = database.shelfDao().getAllShelves();
         int iter = 0;
         for (Shelf s : shelfList
