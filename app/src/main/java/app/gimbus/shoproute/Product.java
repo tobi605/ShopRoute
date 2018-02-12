@@ -30,4 +30,6 @@ public class Product {
     public void setProductName(String productName) {
         this.name= productName;
     }
+
+    public String toString(){return this.name;}
 }
