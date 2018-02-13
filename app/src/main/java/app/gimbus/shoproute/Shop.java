@@ -1,7 +1,6 @@
 package app.gimbus.shoproute;
 
-import android.content.Context;
-
+import java.util.List;
 import java.util.Vector;
 
 /**
@@ -12,9 +11,14 @@ class Shop {
     private Vector<Shelf> shelves;
     private Vector<Product> products;
 
-    Shop(String databaseName, Context context){}
+    Shop(List<Shelf> shelves, List<Product> products){
+        this.shelves.addAll(shelves);
+        this.products.addAll(products);
+    }
 
     Product[] getProducts(){
         return (Product[]) products.toArray();
     }
+
+
 }
