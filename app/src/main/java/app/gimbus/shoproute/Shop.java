@@ -2,9 +2,6 @@ package app.gimbus.shoproute;
 
 import android.content.Context;
 
-import com.huma.room_for_asset.RoomAsset;
-
-import java.util.List;
 import java.util.Vector;
 
 /**
@@ -12,30 +9,10 @@ import java.util.Vector;
  */
 
 class Shop {
-    private Vector<ShelfNode> shelves;
+    private Vector<Shelf> shelves;
     private Vector<Product> products;
-    private AppDatabase database;
 
-    Shop(String databaseName, Context context){
-        this.database = RoomAsset.databaseBuilder(context, AppDatabase.class, databaseName).build();
-        List<Shelf> shelfList = database.shelfDao().getAllShelves();
-        int iter = 0;
-        for (Shelf s : shelfList
-             ) {
-            shelves.add(new ShelfNode(s));
-        }
-        shelfList = null;
-        List<Edge> edgeList = database.edgeDao().getAllEdges();
-        for (Edge e : edgeList
-             ) {
-                shelves.get(e.getFromNode()).addNeighbour(shelves.get(e.getToNode()));
-                shelves.get(e.getToNode()).addNeighbour(shelves.get(e.getFromNode()));
-        }
-        edgeList = null;
-        List<Product> loadProducts = database.productDao().getAll();
-        products.addAll(loadProducts);
-        loadProducts = null;
-    }
+    Shop(String databaseName, Context context){}
 
     Product[] getProducts(){
         return (Product[]) products.toArray();
