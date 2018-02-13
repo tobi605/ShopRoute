@@ -10,6 +10,9 @@ public class SplashScreenActivity extends AppCompatActivity {
     public void onCreate(Bundle savedinstance){
         super.onCreate(savedinstance);
         setContentView(R.layout.splash_screen);
+
+
+
         int delay = 1500;
         new Handler().postDelayed(new Runnable() {
             @Override
