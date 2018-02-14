@@ -16,11 +16,11 @@ class Shelf {
         this.name = name;
     }
 
-    public void addProducts(Product[] products){
+    public void addProducts(Product... products){
         this.products.addAll(Arrays.asList(products));
     }
 
-    public void addNeighbours(Shelf[] shelves){
+    public void addNeighbours(Shelf... shelves){
         this.neighbours.addAll(Arrays.asList(shelves));
     }
 
