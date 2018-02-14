@@ -1,6 +1,7 @@
 package app.gimbus.shoproute;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by tobi6 on 13.02.2018.
@@ -11,19 +12,16 @@ class Shelf {
     private ArrayList<Shelf> neighbours;
     private String name;
 
-    public Shelf(Product[] products, String name) {
+    public Shelf(String name) {
         this.name = name;
-        for (Product p : products
-             ) {
-            this.products.add(p);
-        }
+    }
+
+    public void addProducts(Product[] products){
+        this.products.addAll(Arrays.asList(products));
     }
 
     public void addNeighbours(Shelf[] shelves){
-        for (Shelf s : shelves
-             ) {
-            neighbours.add(s);
-        }
+        this.neighbours.addAll(Arrays.asList(shelves));
     }
 
     public boolean contains(Product product){

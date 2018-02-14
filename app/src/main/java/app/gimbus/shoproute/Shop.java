@@ -8,6 +8,7 @@ import java.util.Vector;
  */
 
 class Shop {
+    private String name;
     private Vector<Shelf> shelves;
     private Vector<Product> products;
 
@@ -20,5 +21,5 @@ class Shop {
         return (Product[]) products.toArray();
     }
 
-
+    public String toString(){ return this.name;}
 }

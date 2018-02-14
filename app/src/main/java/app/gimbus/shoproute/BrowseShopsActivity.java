@@ -5,8 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.lang.reflect.Array;
-
 /**
  * Created by tobi6 on 21.01.2018.
  */
@@ -17,8 +15,8 @@ public class BrowseShopsActivity extends AppCompatActivity{
         super.onCreate(savedinstance);
         setContentView(R.layout.shop_browse);
         ListView shopBrowseList = findViewById(R.id.shop_browse_list);
-        Shop[] shops = ShopsHolder.getInstance().getAllShops();
-        ArrayAdapter<Shop> adapter = new ArrayAdapter<>(getApplicationContext(),R.layout.shop_browse_item, shops);
+        Shop shop = ShopHolder.getInstance().getShop();
+        ArrayAdapter<Shop> adapter = new ArrayAdapter<>(getApplicationContext(),R.layout.shop_browse_item, new Shop[]{shop});
         shopBrowseList.setAdapter(adapter);
     }
 }
