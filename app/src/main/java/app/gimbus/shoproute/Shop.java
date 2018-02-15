@@ -12,7 +12,8 @@ class Shop {
     private Vector<Shelf> shelves;
     private Vector<Product> products;
 
-    Shop(List<Shelf> shelves, List<Product> products){
+    Shop(String name, List<Shelf> shelves, List<Product> products){
+        this.name = name;
         this.shelves.addAll(shelves);
         this.products.addAll(products);
     }
