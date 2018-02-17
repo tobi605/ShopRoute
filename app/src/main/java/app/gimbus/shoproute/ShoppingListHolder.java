@@ -17,4 +17,8 @@ class ShoppingListHolder {
 
     private ShoppingListHolder() {
     }
+
+    void addItem(Product item){
+        shoppingList.add(item);
+    }
 }

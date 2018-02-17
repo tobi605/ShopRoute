@@ -22,15 +22,7 @@ public class CreateListActivity extends AppCompatActivity {
 
         ListView productList = findViewById(R.id.list_creator_list);
         Product[] products = ShopHolder.getInstance().getShop().getProducts();
-        ArrayAdapter<Product> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.item_list_element, products);
+        ProductAdapter adapter = new ProductAdapter(getApplicationContext(),products);
         productList.setAdapter(adapter);
-
-        Button button = findViewById(R.id.list_item_add);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
     }
 }
