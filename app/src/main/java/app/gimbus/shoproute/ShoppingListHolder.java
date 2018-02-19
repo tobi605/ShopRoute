@@ -21,4 +21,6 @@ class ShoppingListHolder {
     void addItem(Product item){
         shoppingList.add(item);
     }
+
+    void clearList(){ shoppingList.clear(); }
 }

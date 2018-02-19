@@ -3,18 +3,22 @@
     //texts
     <string name="splash_screen_logo_text">Splash screen logo</string>
     <string name="main_menu_subtext">SMTH</string>
-    <string name="main_menu_question">What would you like to do?</string>
-    <string name="main_menu_create_list">Create new shopping list</string>
-    <string name="main_menu_browse_shops">Browse shops</string>
-    <string name="list_creator_header">Type in item name or find in list</string>
-    <string name="list_creator_text_input">Item name</string>
-    <string name="list_creator_input_default">Type here</string>
-    <string name="cancel_button_text">Cancel</string>
-    <string name="preview_button_text">Preview list</string>
-    <string name="choose_shop_button_text">Choose shop</string>
-    <string name="default_text">Default</string>
-    <string name="list_preview_header">Your shopping list</string>
+    <string name="main_menu_question">Co chciałbyś zrobić?</string>
+    <string name="main_menu_create_list">Stwórz nową listę zakupów</string>
+    <string name="main_menu_browse_shops">Sklepy</string>
+    <string name="list_creator_header">Wpisz nazwę produktu lub znajdź go na liście</string>
+    <string name="list_creator_text_input">Nazwa produktu</string>
+    <string name="list_creator_input_default">Wpisz tutaj</string>
+    <string name="cancel_button_text">Anuluj</string>
+    <string name="preview_button_text">Podgląd listy</string>
+    <string name="choose_shop_button_text">Wybierz sklep</string>
+    <string name="default_text">Domyślny</string>
+    <string name="list_preview_header">Twoja lista zakupów</string>
     <string name="ok_button_text">OK</string>
-    <string name="shop_choice_text">Available shops</string>
-    <string name="show_route_button_text">Show route</string>
+    <string name="shop_choice_text">Dostępne sklepy</string>
+    <string name="show_route_button_text">Pokaż trasę</string>
+    <string name="current_item_text">Bieżący przedmiot</string>
+    <string name="other_items_text">Pozostałe przedmioty</string>
+    <string name="got_item_button">Mam to</string>
+    <string name="postpone_item_button">Odłóż</string>
 </resources>
