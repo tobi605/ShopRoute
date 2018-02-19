@@ -16,7 +16,7 @@
     <string name="list_preview_header">Twoja lista zakupów</string>
     <string name="ok_button_text">OK</string>
     <string name="shop_choice_text">Dostępne sklepy</string>
-    <string name="show_route_button_text">Pokaż trasę</string>
+    <string name="pick_products_button_text">Wybierz produkty</string>
     <string name="current_item_text">Bieżący przedmiot</string>
     <string name="other_items_text">Pozostałe przedmioty</string>
     <string name="got_item_button">Mam to</string>

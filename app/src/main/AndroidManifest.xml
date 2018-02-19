@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".CreateListActivity"></activity>
         <activity android:name=".BrowseShopsActivity"></activity>
+        <activity android:name=".ShowRouteActivity"></activity>
     </application>
 
 </manifest>
