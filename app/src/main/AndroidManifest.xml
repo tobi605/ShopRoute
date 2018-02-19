@@ -20,6 +20,7 @@
         <activity android:name=".CreateListActivity"></activity>
         <activity android:name=".BrowseShopsActivity"></activity>
         <activity android:name=".ShowRouteActivity"></activity>
+        <activity android:name=".ChooseShopActivity"></activity>
     </application>
 
 </manifest>
