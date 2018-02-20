@@ -16,9 +16,9 @@ class ShopInstanceProvider {
         return new Shop("Biedra", shelves, products);
     }
 
-    static List<String> getAllShopNames(){
-        List<String> names = new LinkedList<>();
-        names.add(TestShop().toString());
-        return names;
+    static List<Shop> getAllShops(){
+        List<Shop> shops = new LinkedList<>();
+        shops.add(TestShop());
+        return shops;
     }
 }
