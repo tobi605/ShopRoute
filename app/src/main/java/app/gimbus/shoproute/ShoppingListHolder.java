@@ -1,6 +1,7 @@
 package app.gimbus.shoproute;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * Created by tobi6 on 15.02.2018.
@@ -23,4 +24,9 @@ class ShoppingListHolder {
     }
 
     void clearList(){ shoppingList.clear(); }
+
+    void sortItems(Shop shop){
+
+
+    }
 }

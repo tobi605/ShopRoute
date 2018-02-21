@@ -16,7 +16,7 @@ public class BrowseShopsActivity extends AppCompatActivity{
         setContentView(R.layout.shop_browse);
         ListView shopBrowseList = findViewById(R.id.shop_browse_list);
         Shop shop = ShopHolder.getInstance().getShop();
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(),R.layout.shop_browse_item, ShopInstanceProvider.getAllShopNames());
+        ArrayAdapter<Shop> adapter = new ArrayAdapter<>(getApplicationContext(),R.layout.shop_browse_item, ShopInstanceProvider.getAllShops());
         shopBrowseList.setAdapter(adapter);
     }
 }
