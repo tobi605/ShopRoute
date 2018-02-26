@@ -41,6 +41,7 @@ public class ChooseShopActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ChooseShopActivity.this, CreateListActivity.class);
+                ShopHolder.getInstance().setShop(ChooseShopActivity.getSelected());
                 startActivity(intent);
             }
         });
