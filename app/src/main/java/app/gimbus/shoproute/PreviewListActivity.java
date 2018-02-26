@@ -17,6 +17,8 @@ public class PreviewListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.list_preview);
+
         ListView listView = findViewById(R.id.previewList);
         ArrayList<Product> shoppingList = ShoppingListHolder.getInstance().getList();
         ArrayAdapter<Product> adapter = new ArrayAdapter(getApplicationContext(), R.layout.shop_browse_item, shoppingList);

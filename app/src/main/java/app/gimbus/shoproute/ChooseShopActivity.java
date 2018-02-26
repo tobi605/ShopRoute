@@ -23,6 +23,7 @@ public class ChooseShopActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_shop);
+        ShoppingListHolder.getInstance().clearList();
 
         ListView shopsList = findViewById(R.id.shop_choice_list);
         List<Shop> shops = ShopInstanceProvider.getAllShops();
