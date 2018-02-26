@@ -26,14 +26,5 @@ class Shop {
 
     Shelf getStartingShelf(){ return this.startingShelf; }
 
-    int countDistance(Product product){
-        int distance = 0;
-        if(!startingShelf.contains(product)){
-            boolean found = false;
-            //TODO
-        }
-        return distance;
-    }
-
     public String toString(){ return this.name;}
 }

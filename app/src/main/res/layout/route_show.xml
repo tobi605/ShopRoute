@@ -24,13 +24,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/current_item_name"
             android:textColor="@color/primary_text_color"
-            android:textSize="20sp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/current_item_place"
-            android:textColor="@color/primary_text_color"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:padding="2dp"/>
     </LinearLayout>
 
     <TextView

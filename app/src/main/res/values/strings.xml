@@ -18,4 +18,6 @@
     <string name="got_item_button">Mam to</string>
     <string name="postpone_item_button">Odłóż</string>
     <string name="show_route_button">Pokaż trasę</string>
+    <string name="no_item">Brak produktu</string>
+    <string name="no_more_items">Brak produktów</string>
 </resources>
