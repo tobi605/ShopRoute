@@ -21,6 +21,7 @@
         <activity android:name=".BrowseShopsActivity"></activity>
         <activity android:name=".ShowRouteActivity"></activity>
         <activity android:name=".ChooseShopActivity"></activity>
+        <activity android:name=".PreviewListActivity"></activity>
     </application>
 
 </manifest>

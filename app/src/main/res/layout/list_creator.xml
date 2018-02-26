@@ -82,6 +82,7 @@
                 android:text="@string/preview_button_text"
                 android:textColor="@color/preview_button_text_color"
                 android:background="@drawable/list_preview_button"
+                android:id="@+id/previewListButton"
                 />
         </LinearLayout>
 
@@ -98,6 +99,7 @@
                 android:text="@string/show_route_button"
                 android:textColor="@color/white"
                 android:background="@drawable/choose_shop_button"
+                android:id="@+id/showRouteButton"
                 />
         </LinearLayout>
 
