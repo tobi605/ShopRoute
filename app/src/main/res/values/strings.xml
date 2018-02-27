@@ -2,7 +2,7 @@
     <string name="app_name">ShopRoute</string>
     //texts
     <string name="splash_screen_logo_text">Splash screen logo</string>
-    <string name="main_menu_subtext">SMTH</string>
+    <string name="main_menu_subtext">Sklepowy nawigator</string>
     <string name="main_menu_question">Co chciałbyś zrobić?</string>
     <string name="main_menu_create_list">Stwórz nową listę zakupów</string>
     <string name="main_menu_browse_shops">Sklepy</string>
