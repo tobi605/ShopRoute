@@ -4,7 +4,7 @@
     <string name="splash_screen_logo_text">Splash screen logo</string>
     <string name="main_menu_subtext">Sklepowy nawigator</string>
     <string name="main_menu_question">Co chciałbyś zrobić?</string>
-    <string name="main_menu_create_list">Stwórz nową listę zakupów</string>
+    <string name="main_menu_create_list">Stwórz listę zakupów</string>
     <string name="main_menu_browse_shops">Sklepy</string>
     <string name="list_creator_header">Wpisz nazwę produktu lub znajdź go na liście</string>
     <string name="list_creator_text_input">Nazwa produktu</string>
