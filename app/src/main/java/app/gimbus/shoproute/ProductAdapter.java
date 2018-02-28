@@ -9,15 +9,20 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.LinkedList;
+import java.util.List;
+
 
 /**
  * Created by tobi6 on 17.02.2018.
  */
 
 public class ProductAdapter extends ArrayAdapter<Product> {
+    private List<Product> products;
 
-    ProductAdapter(@NonNull Context context, Product[] products) {
+    ProductAdapter(@NonNull Context context, List<Product> products) {
         super(context, 0, products);
+        this.products = products;
     }
 
     @Override
@@ -35,6 +40,8 @@ public class ProductAdapter extends ArrayAdapter<Product> {
             @Override
             public void onClick(View view) {
                 ShoppingListHolder.getInstance().addItem((Product) view.getTag());
+                products.remove(view.getTag());
+                notifyDataSetChanged();
             }
         });
         return convertView;

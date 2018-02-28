@@ -17,6 +17,7 @@ class ShoppingListHolder {
     }
 
     private ShoppingListHolder() {
+        this.shoppingList = new ArrayList<>();
     }
 
     void addItem(Product item){
@@ -41,7 +42,7 @@ class ShoppingListHolder {
                 if(!shelves.contains(shelf))shelves.add(shelf);
             }
             this.shoppingList.remove(current);
-            current = this.shoppingList.get(0);
+            if(!shoppingList.isEmpty()) current = this.shoppingList.get(0);
         }
         if(!this.shoppingList.isEmpty()){
             for (Shelf s : shelf.getNeighbours()) {

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.LinkedList;
+import java.util.Vector;
 
 /**
  * Created by tobi6 on 21.01.2018.
@@ -22,7 +23,7 @@ public class CreateListActivity extends AppCompatActivity {
         setContentView(R.layout.list_creator);
 
         ListView productList = findViewById(R.id.list_creator_list);
-        Product[] products = ShopHolder.getInstance().getShop().getProducts();
+        LinkedList<Product> products = ShopHolder.getInstance().getShop().getProducts();
         ProductAdapter adapter = new ProductAdapter(getApplicationContext(),products);
         productList.setAdapter(adapter);
         Button previewList = findViewById(R.id.previewListButton);
@@ -32,6 +33,7 @@ public class CreateListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CreateListActivity.this, PreviewListActivity.class);
+                startActivity(intent);
             }
         });
 

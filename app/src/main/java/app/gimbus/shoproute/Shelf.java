@@ -12,11 +12,13 @@ class Shelf {
     private ArrayList<Shelf> neighbours;
     private String name;
 
-    public Shelf(String name) {
+    Shelf(String name) {
         this.name = name;
+        products = new ArrayList<>();
+        neighbours = new ArrayList<>();
     }
 
-    public void addProducts(Product... products){
+    void addProducts(Product[] products){
         this.products.addAll(Arrays.asList(products));
     }
 

@@ -11,8 +11,6 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedinstance);
         setContentView(R.layout.splash_screen);
 
-
-
         int delay = 1500;
         new Handler().postDelayed(new Runnable() {
             @Override

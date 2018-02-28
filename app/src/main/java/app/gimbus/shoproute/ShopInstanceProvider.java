@@ -10,9 +10,16 @@ import java.util.List;
 
 class ShopInstanceProvider {
     //here will be static methods returning shops
-    static Shop TestShop(){
-        ArrayList<Shelf> shelves = new ArrayList<>();
+    private static Shop TestShop(){
+        Product p1 = new Product("Pomidor");
+        Product p2 = new Product("Woda");
+        Product p3 = new Product("Czekolada");
+        Shelf shelf = new Shelf("Wszystko");
+        shelf.addProducts(new Product[]{p1,p2,p3});
         ArrayList<Product> products = new ArrayList<>();
+        ArrayList<Shelf> shelves = new ArrayList<>();
+        products.add(p1); products.add(p2); products.add(p3);
+        shelves.add(shelf);
         return new Shop("Biedra", shelves, products);
     }
 
