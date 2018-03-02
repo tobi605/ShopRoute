@@ -29,24 +29,27 @@ class ShoppingListHolder {
     void sortItems(Shop shop){
         ArrayList<Product> sortedList = new ArrayList<>();
         ArrayList<Shelf> shelfList = new ArrayList<>();
-        sortHelper(shop.getStartingShelf(), sortedList, shelfList);
+        ArrayList<Shelf> visited = new ArrayList<>();
+        sortHelper(shop.getStartingShelf(), sortedList, shelfList, visited);
         this.shoppingList = sortedList;
         this.isSorted = true;
     }
 
-    private void sortHelper(Shelf shelf, ArrayList<Product> sortedList, ArrayList<Shelf> shelves){
+    private void sortHelper(Shelf shelf, ArrayList<Product> sortedList, ArrayList<Shelf> shelves, ArrayList<Shelf> visited){
         Product current = this.shoppingList.get(0);
-        while (shelf.contains(current)){
+        while (current!=null){
             if(!sortedList.contains(current)){
                 sortedList.add(current);
                 if(!shelves.contains(shelf))shelves.add(shelf);
             }
             this.shoppingList.remove(current);
             if(!shoppingList.isEmpty()) current = this.shoppingList.get(0);
+            else current=null;
         }
+        visited.add(shelf);
         if(!this.shoppingList.isEmpty()){
             for (Shelf s : shelf.getNeighbours()) {
-                sortHelper(s, sortedList, shelves);
+                if(!visited.contains(s)) sortHelper(s, sortedList, shelves, visited);
             }
         }
     }

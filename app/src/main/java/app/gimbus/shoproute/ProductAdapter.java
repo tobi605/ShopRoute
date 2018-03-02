@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.LinkedList;
@@ -33,7 +34,7 @@ public class ProductAdapter extends ArrayAdapter<Product> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_list_element, parent, false);
         }
         TextView name = convertView.findViewById(R.id.itemName);
-        Button addButton = convertView.findViewById(R.id.list_item_add);
+        ImageButton addButton = convertView.findViewById(R.id.list_item_add);
         name.setText(product.toString());
         addButton.setTag(product);
         addButton.setOnClickListener(new View.OnClickListener() {

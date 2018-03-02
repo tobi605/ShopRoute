@@ -24,7 +24,7 @@ public class ShowRouteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
         setContentView(R.layout.route_show);
-        //if(!ShoppingListHolder.getInstance().isSorted()) ShoppingListHolder.getInstance().sortItems(ShopHolder.getInstance().getShop()); //fix sort
+        if(!ShoppingListHolder.getInstance().isSorted()) ShoppingListHolder.getInstance().sortItems(ShopHolder.getInstance().getShop());
         shoppingList = ShoppingListHolder.getInstance().getList();
 
         Date time = Calendar.getInstance().getTime();
