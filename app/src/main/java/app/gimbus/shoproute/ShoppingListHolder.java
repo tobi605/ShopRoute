@@ -38,7 +38,10 @@ class ShoppingListHolder {
     private void sortHelper(Shelf shelf, ArrayList<Product> sortedList, ArrayList<Shelf> shelves, ArrayList<Shelf> visited){
         for (Product p : this.shoppingList
              ) {
-            if(!sortedList.contains(p) && shelf.contains(p)) sortedList.add(p);
+            if(!sortedList.contains(p) && shelf.contains(p)){
+                sortedList.add(p);
+                if(!shelves.contains(shelf)) shelves.add(shelf);
+            }
         }
         for (Product p : sortedList
              ) {
