@@ -1,6 +1,9 @@
 package app.gimbus.shoproute;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -32,6 +35,18 @@ public class ShowRouteActivity extends AppCompatActivity {
         final ListView otherItems = findViewById(R.id.other_items);
         Button postponeButton = findViewById(R.id.postpone_item);
         Button gotItButton = findViewById(R.id.got_item);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.dialog_title);
+        builder.setPositiveButton(R.string.dialog_positive, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                ShoppingListHolder.getInstance().clearList();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        final AlertDialog dialog = builder.create();
 
         current = shoppingList.remove(0);
         currentItemName.setText(current.toString());
@@ -44,6 +59,7 @@ public class ShowRouteActivity extends AppCompatActivity {
                 if(shoppingList.size()==0){
                     currentItemName.setText(R.string.no_item);
                     current = null;
+                    dialog.show();
                 }
                 else if(shoppingList.size()==1){
                     current = shoppingList.remove(0);
@@ -65,9 +81,6 @@ public class ShowRouteActivity extends AppCompatActivity {
                     current = shoppingList.remove(0);
                     arrayAdapter.notifyDataSetChanged();
                     currentItemName.setText(current.toString());
-                }
-                else {
-                    //put alert "empty list"
                 }
             }
         });

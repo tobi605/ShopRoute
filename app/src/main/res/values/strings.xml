@@ -21,4 +21,6 @@
     <string name="no_item">Brak produktu</string>
     <string name="no_more_items">Brak produktów</string>
     <string name="add_item_description">Add item ImageButton</string>
+    <string name="dialog_title">Zakupy zakończone</string>
+    <string name="dialog_positive">Przejdź do menu</string>
 </resources>

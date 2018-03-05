@@ -26,7 +26,7 @@ class Shelf {
         this.neighbours.addAll(Arrays.asList(shelves));
     }
 
-    Shelf[] getNeighbours(){return (Shelf[]) neighbours.toArray();}
+    ArrayList<Shelf> getNeighbours(){return this.neighbours;}
 
     boolean contains(Product product){
         return products.contains(product);
