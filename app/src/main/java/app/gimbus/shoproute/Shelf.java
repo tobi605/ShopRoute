@@ -18,11 +18,11 @@ class Shelf {
         neighbours = new ArrayList<>();
     }
 
-    void addProducts(Product[] products){
+    void addProducts(Product... products){
         this.products.addAll(Arrays.asList(products));
     }
 
-    public void addNeighbours(Shelf... shelves){
+    void addNeighbours(Shelf... shelves){
         this.neighbours.addAll(Arrays.asList(shelves));
     }
 
