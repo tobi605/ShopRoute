@@ -32,8 +32,9 @@
         <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/text_input"
             android:theme="@style/item_input_style"
-            android:text="@string/list_creator_input_default"
+            android:hint="@string/list_creator_input_default"
             android:textSize="20sp"
             android:textColor="@color/item_input_color"
             />

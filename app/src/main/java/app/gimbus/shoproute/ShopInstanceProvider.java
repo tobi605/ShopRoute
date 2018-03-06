@@ -1,5 +1,7 @@
 package app.gimbus.shoproute;
 
+import android.support.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -11,6 +13,7 @@ import java.util.List;
 
 class ShopInstanceProvider {
     //here will be static methods returning shops
+    @NonNull
     private static Shop TestShop(){
         Product p1 = new Product("Pomidor");
         Product p2 = new Product("Woda");
@@ -24,7 +27,9 @@ class ShopInstanceProvider {
         return new Shop("Biedra", shelves, products);
     }
 
+    @NonNull
     private static Shop TestShop2(){
+        String name = "Stonka";
         Product[] products = new Product[]{new Product("Pomidor"),
                 new Product("Kapusta"),
                 new Product("Jablko"),
@@ -64,7 +69,7 @@ class ShopInstanceProvider {
         Collections.addAll(productArrayList, products);
         ArrayList<Shelf> shelfArrayList = new ArrayList<>();
         Collections.addAll(shelfArrayList, shelves);
-        return new Shop("Stonka", shelfArrayList,productArrayList);
+        return new Shop(name, shelfArrayList,productArrayList);
     }
 
     static List<Shop> getAllShops(){
