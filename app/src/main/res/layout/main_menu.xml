@@ -104,6 +104,24 @@
         </RelativeLayout>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/saved_lists"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/saved_lists_text"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/main_menu_button"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

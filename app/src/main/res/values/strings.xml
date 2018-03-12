@@ -22,4 +22,7 @@
     <string name="add_item_description">Add item ImageButton</string>
     <string name="dialog_title">Zakupy zakończone</string>
     <string name="dialog_positive">Przejdź do menu</string>
+    <string name="saved_lists_text">Zapisane listy</string>
+    <string name="reuse_list">Użyj ponownie</string>
+    <string name="preferences">MyPreferences</string>
 </resources>

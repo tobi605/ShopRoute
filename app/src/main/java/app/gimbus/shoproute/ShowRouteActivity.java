@@ -29,6 +29,7 @@ public class ShowRouteActivity extends AppCompatActivity {
         setContentView(R.layout.route_show);
         if(!ShoppingListHolder.getInstance().isSorted()) ShoppingListHolder.getInstance().sortItems(ShopHolder.getInstance().getShop());
         shoppingList = ShoppingListHolder.getInstance().getList();
+        final CharSequence[] items = {"Zapisać listę?"};
 
         Date time = Calendar.getInstance().getTime();
         final TextView currentItemName = findViewById(R.id.current_item_name);
@@ -37,9 +38,16 @@ public class ShowRouteActivity extends AppCompatActivity {
         Button gotItButton = findViewById(R.id.got_item);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.dialog_title);
+        builder.setMultiChoiceItems(items, null, new DialogInterface.OnMultiChoiceClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i, boolean b) {
+                if(b) ShoppingListHolder.getInstance().setToBeSaved();
+            }
+        });
         builder.setPositiveButton(R.string.dialog_positive, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                if(ShoppingListHolder.getInstance().getToBeSaved()) ShoppingListHolder.getInstance().saveList(getApplicationContext());
                 ShoppingListHolder.getInstance().clearList();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);

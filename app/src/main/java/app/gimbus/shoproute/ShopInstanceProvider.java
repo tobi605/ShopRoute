@@ -78,4 +78,15 @@ class ShopInstanceProvider {
         shops.add(TestShop2());
         return shops;
     }
+
+    static Shop getShopWithName(String name){
+        List<Shop> shops = getAllShops();
+        Shop shop = null;
+        int i = 0;
+        while (i < shops.size() && shop==null){
+            if(shops.get(i).toString().equals(name)) shop = shops.get(i);
+            else i++;
+        }
+        return shop;
+    }
 }

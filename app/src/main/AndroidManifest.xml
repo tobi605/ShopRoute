@@ -9,19 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateListActivity"></activity>
-        <activity android:name=".BrowseShopsActivity"></activity>
-        <activity android:name=".ShowRouteActivity"></activity>
-        <activity android:name=".ChooseShopActivity"></activity>
-        <activity android:name=".PreviewListActivity"></activity>
+        <activity android:name=".CreateListActivity" />
+        <activity android:name=".BrowseShopsActivity" />
+        <activity android:name=".ShowRouteActivity" />
+        <activity android:name=".ChooseShopActivity" />
+        <activity android:name=".PreviewListActivity" />
+        <activity android:name=".SavedListsActivity"></activity>
     </application>
 
 </manifest>

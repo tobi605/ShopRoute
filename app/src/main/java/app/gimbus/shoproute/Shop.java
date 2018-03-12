@@ -30,4 +30,14 @@ class Shop {
     Shelf getStartingShelf(){ return this.startingShelf; }
 
     public String toString(){ return this.name;}
+
+    public Product getItemWithName(String name){
+        Product product = null;
+        int i = 0;
+        while (i < this.products.size() && product==null){
+            if(this.products.get(i).toString().equals(name)) product = this.products.get(i);
+            else i++;
+        }
+        return product;
+    }
 }
