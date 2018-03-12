@@ -12,4 +12,5 @@
     <color name="choose_shop_color">#0ebb0e</color>
     <color name="list_item_text_color">#888888</color>
     <color name="choose_shop_selected">#bcbcbc</color>
+    <color name="remove_list_color">#e54444</color>
 </resources>

@@ -24,5 +24,7 @@
     <string name="dialog_positive">Przejdź do menu</string>
     <string name="saved_lists_text">Zapisane listy</string>
     <string name="reuse_list">Użyj ponownie</string>
-    <string name="preferences">MyPreferences</string>
+    <string name="preferences">SavedLists</string>
+    <string name="save_list_question">Zapisać listę?</string>
+    <string name="delete_saved">Usuń listę</string>
 </resources>

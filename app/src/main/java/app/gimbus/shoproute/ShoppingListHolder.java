@@ -10,6 +10,9 @@ import java.util.AbstractSet;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentSkipListSet;
 
 /**
  * Created by tobi6 on 15.02.2018.
@@ -17,9 +20,10 @@ import java.util.Date;
 
 class ShoppingListHolder {
     private ArrayList<Product> shoppingList;
-    private AbstractSet<String> toSaveList;
+    private ArrayList<String> toSaveList;
     private boolean isSorted = false;
     private boolean toBeSaved = false;
+    private boolean comesFromSave = false;
 
     private static final ShoppingListHolder ourInstance = new ShoppingListHolder();
 
@@ -29,6 +33,7 @@ class ShoppingListHolder {
 
     private ShoppingListHolder() {
         this.shoppingList = new ArrayList<>();
+        this.toSaveList = new ArrayList<>();
     }
 
     void addItem(Product item){
@@ -40,6 +45,9 @@ class ShoppingListHolder {
     void clearList(){
         shoppingList.clear();
         toSaveList.clear();
+        ShoppingListHolder.getInstance().isSorted=false;
+        ShoppingListHolder.getInstance().toBeSaved=false;
+        ShoppingListHolder.getInstance().comesFromSave=false;
     }
 
     void sortItems(Shop shop){
@@ -89,10 +97,24 @@ class ShoppingListHolder {
 
 
     void saveList(Context context) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(Resources.getSystem().getString(R.string.preferences), Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = context.getSharedPreferences(String.valueOf(R.string.preferences), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
+        ConcurrentSkipListSet<String> strings = new ConcurrentSkipListSet<>();
+        strings.addAll(this.toSaveList);
         Date date = Calendar.getInstance().getTime();
-        editor.putStringSet(date.toString(), this.toSaveList);
+        editor.putStringSet(date.toString(), strings);
         editor.apply();
     }
+
+    static void createListFromStrings(List<String> list) {
+        ShoppingListHolder.getInstance().comesFromSave=true;
+        Shop shop = ShopInstanceProvider.getShopWithName(list.get(0));
+        ShopHolder.getInstance().setShop(shop);
+        for (int i = 1; i < list.size(); i++){
+            Product product = shop.getItemWithName(list.get(i));
+            if(product!=null) ShoppingListHolder.getInstance().addItem(product);
+        }
+    }
+
+    boolean getComesFromSave(){ return this.comesFromSave;}
 }

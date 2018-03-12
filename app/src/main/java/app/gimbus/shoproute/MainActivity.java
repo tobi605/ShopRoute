@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         //Buttons
         Button createListButton = findViewById(R.id.create_list_button);
         Button browseShopsButton = findViewById(R.id.browse_shops_button);
+        Button savedLists = findViewById(R.id.saved_lists);
         createListButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,6 +29,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, BrowseShopsActivity.class);
                 startActivity(intent);
+            }
+        });
+        savedLists.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,SavedListsActivity.class));
             }
         });
     }
