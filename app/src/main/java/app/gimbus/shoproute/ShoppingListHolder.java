@@ -2,16 +2,11 @@ package app.gimbus.shoproute;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.util.ArraySet;
 
-import java.lang.reflect.Array;
-import java.util.AbstractSet;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.ConcurrentSkipListSet;
 
 /**

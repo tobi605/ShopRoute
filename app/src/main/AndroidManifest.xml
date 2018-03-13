@@ -17,12 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateListActivity" />
-        <activity android:name=".BrowseShopsActivity" />
-        <activity android:name=".ShowRouteActivity" />
-        <activity android:name=".ChooseShopActivity" />
-        <activity android:name=".PreviewListActivity" />
-        <activity android:name=".SavedListsActivity"></activity>
+        <activity android:name=".CreateListActivity" android:launchMode="singleTop"/>
+        <activity android:name=".BrowseShopsActivity" android:launchMode="singleTop"/>
+        <activity android:name=".ShowRouteActivity"
+            android:launchMode="singleTop"/>
+        <activity android:name=".ChooseShopActivity" android:launchMode="singleTop"/>
+        <activity android:name=".PreviewListActivity" android:launchMode="singleTop"/>
+        <activity android:name=".SavedListsActivity" android:launchMode="singleTop" />
     </application>
 
 </manifest>

@@ -51,7 +51,7 @@ class SavedListAdapter extends ArrayAdapter  {
             public void onClick(View view) {
                 ShoppingListHolder.createListFromStrings(shop);
                 getContext().startActivity(new Intent(getContext(), ShowRouteActivity.class));
-                //TODO fix bug with starting activity
+                //TODO try new
             }
         });
 

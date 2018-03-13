@@ -2,7 +2,6 @@ package app.gimbus.shoproute;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Vector;
 
 /**
  * Created by tobi6 on 07.02.2018.
@@ -31,7 +30,7 @@ class Shop {
 
     public String toString(){ return this.name;}
 
-    public Product getItemWithName(String name){
+    Product getItemWithName(String name){
         Product product = null;
         int i = 0;
         while (i < this.products.size() && product==null){

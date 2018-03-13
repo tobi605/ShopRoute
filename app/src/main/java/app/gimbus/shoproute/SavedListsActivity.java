@@ -1,9 +1,10 @@
 package app.gimbus.shoproute;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Pair;
 import android.widget.ListView;
 
@@ -33,4 +34,5 @@ public class SavedListsActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.saved_lists_list);
         listView.setAdapter(adapter);
     }
+
 }
