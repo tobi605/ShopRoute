@@ -7,10 +7,21 @@
     tools:context="app.gimbus.shoproute.SavedListsActivity">
 
     <ListView
+        android:id="@+id/saved_lists_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/saved_lists_list"
-        android:layout_centerInParent="true">
+        android:layout_above="@+id/choose_saved_list">
 
     </ListView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/choose_saved_list"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/choose_save_list"
+        android:textColor="@color/white"
+        android:padding="6dp"
+        android:background="@drawable/choose_shop_button"/>
 </RelativeLayout>

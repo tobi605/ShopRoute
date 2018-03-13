@@ -2,7 +2,8 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/choose_shop_background">
 
     <TextView
         android:id="@+id/list_element_date"
@@ -21,25 +22,12 @@
         android:textSize="20sp"
         android:textColor="@color/primary_text_color"/>
     <Button
-        android:id="@+id/reuse_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reuse_list"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:padding="6dp"
-        android:background="@drawable/main_menu_button"/>
-
-    <Button
         android:id="@+id/delete_saved"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/reuse_list"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignStart="@+id/reuse_list"
-        android:layout_below="@id/reuse_list"
-        android:layout_marginTop="3dp"
+        android:layout_centerVertical="true"
         android:background="@drawable/remove_list_button"
         android:text="@string/delete_saved"
         android:textColor="@color/white" />

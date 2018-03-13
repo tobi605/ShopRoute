@@ -16,6 +16,7 @@ import java.util.concurrent.ConcurrentSkipListSet;
 class ShoppingListHolder {
     private ArrayList<Product> shoppingList;
     private ArrayList<String> toSaveList;
+    private String toSaveShop;
     private boolean isSorted = false;
     private boolean toBeSaved = false;
     private boolean comesFromSave = false;
@@ -33,7 +34,6 @@ class ShoppingListHolder {
 
     void addItem(Product item){
         shoppingList.add(item);
-        if(!toSaveList.contains(ShopHolder.getInstance().getShop().toString())) toSaveList.add(ShopHolder.getInstance().getShop().toString());
         toSaveList.add(item.toString());
     }
 
@@ -95,6 +95,7 @@ class ShoppingListHolder {
         SharedPreferences sharedPreferences = context.getSharedPreferences(String.valueOf(R.string.preferences), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         ConcurrentSkipListSet<String> strings = new ConcurrentSkipListSet<>();
+        strings.add(this.toSaveShop);
         strings.addAll(this.toSaveList);
         Date date = Calendar.getInstance().getTime();
         editor.putStringSet(date.toString(), strings);
@@ -103,7 +104,7 @@ class ShoppingListHolder {
 
     static void createListFromStrings(List<String> list) {
         ShoppingListHolder.getInstance().comesFromSave=true;
-        Shop shop = ShopInstanceProvider.getShopWithName(list.get(0));
+        Shop shop = ShopInstanceProvider.getShopWithName(ShoppingListHolder.getInstance().toSaveShop);
         ShopHolder.getInstance().setShop(shop);
         for (int i = 1; i < list.size(); i++){
             Product product = shop.getItemWithName(list.get(i));
@@ -112,4 +113,8 @@ class ShoppingListHolder {
     }
 
     boolean getComesFromSave(){ return this.comesFromSave;}
+
+    void setToSaveShop(String name){ this.toSaveShop = name;}
+
+
 }

@@ -31,11 +31,12 @@ public class ChooseShopActivity extends AppCompatActivity {
         shopsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                 ShopHolder.getInstance().setShop((Shop) adapterView.getItemAtPosition(i));
-                 view.setSelected(true);
+                Shop shop = (Shop) adapterView.getItemAtPosition(i);
+                ShopHolder.getInstance().setShop(shop);
+                ShoppingListHolder.getInstance().setToSaveShop(shop.toString());
+                view.setSelected(true);
             }
         });
-
         Button button = findViewById(R.id.choose_shop_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

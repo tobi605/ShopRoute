@@ -40,18 +40,16 @@ class SavedListAdapter extends ArrayAdapter  {
         }
         TextView dateView = convertView.findViewById(R.id.list_element_date);
         TextView shopView = convertView.findViewById(R.id.list_element_shop);
-        Button reuse = convertView.findViewById(R.id.reuse_list);
         Button delete = convertView.findViewById(R.id.delete_saved);
 
         dateView.setText(date);
         shopView.setText(shop.get(0));
 
-        reuse.setOnClickListener(new View.OnClickListener() {
+        convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ShoppingListHolder.createListFromStrings(shop);
-                getContext().startActivity(new Intent(getContext(), ShowRouteActivity.class));
-                //TODO try new
+                view.setSelected(true);
+                SavedListsActivity.setShopAndProducts(shop);
             }
         });
 
