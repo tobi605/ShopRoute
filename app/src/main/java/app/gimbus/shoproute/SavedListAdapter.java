@@ -1,7 +1,6 @@
 package app.gimbus.shoproute;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.text.format.DateFormat;
