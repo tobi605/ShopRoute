@@ -43,6 +43,7 @@ class ShoppingListHolder {
         ShoppingListHolder.getInstance().isSorted=false;
         ShoppingListHolder.getInstance().toBeSaved=false;
         ShoppingListHolder.getInstance().comesFromSave=false;
+        toSaveShop = null;
     }
 
     void sortItems(Shop shop){
@@ -99,12 +100,12 @@ class ShoppingListHolder {
         strings.addAll(this.toSaveList);
         Date date = Calendar.getInstance().getTime();
         editor.putStringSet(date.toString(), strings);
-        editor.apply();
+        editor.commit();
     }
 
     static void createListFromStrings(List<String> list) {
         ShoppingListHolder.getInstance().comesFromSave=true;
-        Shop shop = ShopInstanceProvider.getShopWithName(ShoppingListHolder.getInstance().toSaveShop);
+        Shop shop = ShopInstanceProvider.getShopWithName(list.get(0));
         ShopHolder.getInstance().setShop(shop);
         for (int i = 1; i < list.size(); i++){
             Product product = shop.getItemWithName(list.get(i));

@@ -24,7 +24,7 @@ public class SavedListsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.saved_lists);
 
-        SharedPreferences preferences = getApplicationContext().getSharedPreferences(String.valueOf(R.string.preferences), Context.MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences(String.valueOf(R.string.preferences), Context.MODE_PRIVATE);
         Map<String, ?> entries = preferences.getAll();
         ArrayList<String> dates = new ArrayList<>();
         dates.addAll(entries.keySet());
