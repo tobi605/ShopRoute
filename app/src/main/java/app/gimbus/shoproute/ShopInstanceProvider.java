@@ -32,7 +32,7 @@ class ShopInstanceProvider {
         String name = "Stonka";
         Product[] products = new Product[]{new Product("Pomidor"),
                 new Product("Kapusta"),
-                new Product("Jablko"),
+                new Product("Jabłko"),
                 new Product("Arbuz"),
                 new Product("Chleb"),
                 new Product("Rogalik"),
@@ -41,15 +41,15 @@ class ShopInstanceProvider {
                 new Product("Mleko"),
                 new Product("Ser"),
                 new Product("Czekolada"),
-                new Product("Zelki"),
+                new Product("Żelki"),
                 new Product("Piwo"),
                 new Product("Whisky")};
         Shelf[] shelves = new Shelf[]{new Shelf("Warzywa"),
                 new Shelf("Owoce"),
                 new Shelf("Pieczywo"),
-                new Shelf("Wedliny"),
-                new Shelf("Nabial"),
-                new Shelf("Slodycze"),
+                new Shelf("Wędliny"),
+                new Shelf("Nabiał"),
+                new Shelf("Słodycze"),
                 new Shelf("Alkohol")};
         shelves[0].addProducts(products[0], products[1]);
         shelves[1].addProducts(products[2], products[3]);

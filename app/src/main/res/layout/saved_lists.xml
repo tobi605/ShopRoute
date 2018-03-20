@@ -23,5 +23,6 @@
         android:text="@string/choose_save_list"
         android:textColor="@color/white"
         android:padding="6dp"
-        android:background="@drawable/choose_shop_button"/>
+        android:background="@drawable/choose_shop_button"
+        android:layout_marginBottom="5dp"/>
 </RelativeLayout>

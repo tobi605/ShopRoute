@@ -32,17 +32,19 @@ public class ProductAdapter extends ArrayAdapter<Product> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_list_element, parent, false);
         }
         TextView name = convertView.findViewById(R.id.itemName);
-        ImageButton addButton = convertView.findViewById(R.id.list_item_add);
+        //ImageButton addButton = convertView.findViewById(R.id.list_item_add);
         name.setText(product.toString());
-        addButton.setTag(product);
-        addButton.setOnClickListener(new View.OnClickListener() {
+        convertView.setTag(product);
+        View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ShoppingListHolder.getInstance().addItem((Product) view.getTag());
                 products.remove(view.getTag());
                 notifyDataSetChanged();
             }
-        });
+        };
+        //addButton.setOnClickListener(listener);
+        convertView.setOnClickListener(listener);
         return convertView;
     }
 }

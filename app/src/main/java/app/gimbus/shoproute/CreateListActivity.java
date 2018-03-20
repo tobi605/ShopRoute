@@ -1,7 +1,9 @@
 package app.gimbus.shoproute;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -46,8 +48,21 @@ public class CreateListActivity extends AppCompatActivity {
         showRoute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CreateListActivity.this, ShowRouteActivity.class);
-                startActivity(intent);
+                if(ShoppingListHolder.getInstance().getList().size()!=0) {
+                    Intent intent = new Intent(CreateListActivity.this, ShowRouteActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                    builder.setTitle(R.string.no_items_picked);
+                    builder.setNeutralButton(R.string.back, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                        }
+                    });
+                    builder.create();
+                }
             }
         });
 

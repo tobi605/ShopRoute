@@ -29,4 +29,6 @@
     <string name="delete_saved">Usuń listę</string>
     <string name="choose_save_list">Wybierz listę</string>
     <string name="saved_list_index">SavedListIndex</string>
+    <string name="no_items_picked">Nie wybrano produktów</string>
+    <string name="back">Powrót</string>
 </resources>
