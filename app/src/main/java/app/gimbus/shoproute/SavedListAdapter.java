@@ -16,20 +16,20 @@ import java.util.List;
  * Created by tobi6 on 12.03.2018.
  */
 
-class SavedListAdapter extends ArrayAdapter  {
+class SavedListAdapter extends ArrayAdapter {
 
 
-    SavedListAdapter(Context context, ArrayList<ArrayList<String>> lists){
+    SavedListAdapter(Context context, ArrayList<ArrayList<String>> lists) {
         super(context, 0, lists);
     }
 
-    public View getView(int position, View convertView,@NonNull final ViewGroup parent){
+    public View getView(int position, View convertView, @NonNull final ViewGroup parent) {
         final List<String> list = (ArrayList<String>) getItem(position);
-        String date = list.get(2)+" "+list.get(1);
+        String date = list.get(2) + " " + list.get(1);
         final ArrayList<String> shop = new ArrayList<>();
         for (int i = 3; i < list.size(); i++)
             shop.add(list.get(i));
-        if(convertView==null){
+        if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.saved_list_element, parent, false);
         }
         TextView dateView = convertView.findViewById(R.id.list_element_date);
@@ -50,7 +50,7 @@ class SavedListAdapter extends ArrayAdapter  {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getContext().deleteFile(list.get(0)+"");
+                getContext().deleteFile(list.get(0) + "");
                 remove(list);
                 notifyDataSetChanged();
             }

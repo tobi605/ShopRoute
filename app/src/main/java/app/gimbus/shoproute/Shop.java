@@ -13,7 +13,7 @@ class Shop {
     private Shelf startingShelf;
     private LinkedList<Product> products;
 
-    Shop(String name, List<Shelf> shelves, List<Product> products){
+    Shop(String name, List<Shelf> shelves, List<Product> products) {
         this.name = name;
         this.products = new LinkedList<>();
         this.shelves = new LinkedList<>();
@@ -22,19 +22,23 @@ class Shop {
         this.startingShelf = shelves.get(0);
     }
 
-    LinkedList<Product> getProducts(){
+    LinkedList<Product> getProducts() {
         return this.products;
     }
 
-    Shelf getStartingShelf(){ return this.startingShelf; }
+    Shelf getStartingShelf() {
+        return this.startingShelf;
+    }
 
-    public String toString(){ return this.name;}
+    public String toString() {
+        return this.name;
+    }
 
-    Product getItemWithName(String name){
+    Product getItemWithName(String name) {
         Product product = null;
         int i = 0;
-        while (i < this.products.size() && product==null){
-            if(this.products.get(i).toString().equals(name)) product = this.products.get(i);
+        while (i < this.products.size() && product == null) {
+            if (this.products.get(i).toString().equals(name)) product = this.products.get(i);
             else i++;
         }
         return product;

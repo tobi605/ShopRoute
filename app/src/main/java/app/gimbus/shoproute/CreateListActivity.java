@@ -21,7 +21,7 @@ import java.util.LinkedList;
 public class CreateListActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedinstance){
+    protected void onCreate(Bundle savedinstance) {
         super.onCreate(savedinstance);
         setContentView(R.layout.list_creator);
 
@@ -31,7 +31,7 @@ public class CreateListActivity extends AppCompatActivity {
         final AutoCompleteTextView autoCompleteTextView = findViewById(R.id.text_input);
 
         final LinkedList<Product> products = ShopHolder.getInstance().getShop().getProducts();
-        final ProductAdapter adapter = new ProductAdapter(getApplicationContext(),products);
+        final ProductAdapter adapter = new ProductAdapter(getApplicationContext(), products);
         final ArrayAdapter<Product> productArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, products);
 
         autoCompleteTextView.setAdapter(productArrayAdapter);
@@ -48,11 +48,10 @@ public class CreateListActivity extends AppCompatActivity {
         showRoute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(ShoppingListHolder.getInstance().getList().size()!=0) {
+                if (ShoppingListHolder.getInstance().getList().size() != 0) {
                     Intent intent = new Intent(CreateListActivity.this, ShowRouteActivity.class);
                     startActivity(intent);
-                }
-                else {
+                } else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
                     builder.setTitle(R.string.no_items_picked);
                     builder.setNeutralButton(R.string.back, new DialogInterface.OnClickListener() {

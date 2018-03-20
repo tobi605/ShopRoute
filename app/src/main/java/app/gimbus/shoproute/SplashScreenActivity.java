@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 
 public class SplashScreenActivity extends AppCompatActivity {
-    public void onCreate(Bundle savedinstance){
+    public void onCreate(Bundle savedinstance) {
         super.onCreate(savedinstance);
         setContentView(R.layout.splash_screen);
 

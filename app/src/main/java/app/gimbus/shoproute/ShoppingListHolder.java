@@ -33,21 +33,21 @@ class ShoppingListHolder {
         this.toSaveList = new ArrayList<>();
     }
 
-    void addItem(Product item){
+    void addItem(Product item) {
         shoppingList.add(item);
         toSaveList.add(item.toString());
     }
 
-    void clearList(){
+    void clearList() {
         shoppingList.clear();
         toSaveList.clear();
-        ShoppingListHolder.getInstance().isSorted=false;
-        ShoppingListHolder.getInstance().toBeSaved=false;
-        ShoppingListHolder.getInstance().comesFromSave=false;
+        ShoppingListHolder.getInstance().isSorted = false;
+        ShoppingListHolder.getInstance().toBeSaved = false;
+        ShoppingListHolder.getInstance().comesFromSave = false;
         toSaveShop = null;
     }
 
-    void sortItems(Shop shop){
+    void sortItems(Shop shop) {
         ArrayList<Product> sortedList = new ArrayList<>();
         ArrayList<Shelf> shelfList = new ArrayList<>();
         ArrayList<Shelf> visited = new ArrayList<>();
@@ -56,29 +56,33 @@ class ShoppingListHolder {
         this.isSorted = true;
     }
 
-    private void sortHelper(Shelf shelf, ArrayList<Product> sortedList, ArrayList<Shelf> shelves, ArrayList<Shelf> visited){
+    private void sortHelper(Shelf shelf, ArrayList<Product> sortedList, ArrayList<Shelf> shelves, ArrayList<Shelf> visited) {
         for (Product p : this.shoppingList
-             ) {
-            if(!sortedList.contains(p) && shelf.contains(p)){
+                ) {
+            if (!sortedList.contains(p) && shelf.contains(p)) {
                 sortedList.add(p);
-                if(!shelves.contains(shelf)) shelves.add(shelf);
+                if (!shelves.contains(shelf)) shelves.add(shelf);
             }
         }
         for (Product p : sortedList
-             ) {
-            if(this.shoppingList.contains(p)) this.shoppingList.remove(p);
+                ) {
+            if (this.shoppingList.contains(p)) this.shoppingList.remove(p);
         }
         visited.add(shelf);
-        if(!this.shoppingList.isEmpty()){
+        if (!this.shoppingList.isEmpty()) {
             for (Shelf s : shelf.getNeighbours()) {
-                if(!visited.contains(s)) sortHelper(s, sortedList, shelves, visited);
+                if (!visited.contains(s)) sortHelper(s, sortedList, shelves, visited);
             }
         }
     }
 
-    boolean isSorted(){ return isSorted;}
+    boolean isSorted() {
+        return isSorted;
+    }
 
-    ArrayList<Product> getList(){ return this.shoppingList;}
+    ArrayList<Product> getList() {
+        return this.shoppingList;
+    }
 
     ArrayList<String> getToSaveList() {
         ArrayList<String> arrayList = new ArrayList<>();
@@ -86,7 +90,9 @@ class ShoppingListHolder {
         return arrayList;
     }
 
-    void setToBeSaved(){ this.toBeSaved = true;}
+    void setToBeSaved() {
+        this.toBeSaved = true;
+    }
 
     boolean getToBeSaved() {
         return toBeSaved;
@@ -99,7 +105,7 @@ class ShoppingListHolder {
         String string = "dd-MM-yyyy HH:mm:ss";
         String dateParsed = android.text.format.DateFormat.format(string, date).toString();
         try {
-            FileOutputStream output = context.openFileOutput(id+"",Context.MODE_PRIVATE);
+            FileOutputStream output = context.openFileOutput(id + "", Context.MODE_PRIVATE);
             output.write(dateParsed.getBytes());
             output.write(separate.getBytes());
             output.write(this.toSaveShop.getBytes());
@@ -116,18 +122,22 @@ class ShoppingListHolder {
     }
 
     static void createListFromStrings(List<String> list) {
-        ShoppingListHolder.getInstance().comesFromSave=true;
+        ShoppingListHolder.getInstance().comesFromSave = true;
         Shop shop = ShopInstanceProvider.getShopWithName(list.get(0));
         ShopHolder.getInstance().setShop(shop);
-        for (int i = 1; i < list.size(); i++){
+        for (int i = 1; i < list.size(); i++) {
             Product product = shop.getItemWithName(list.get(i));
-            if(product!=null) ShoppingListHolder.getInstance().addItem(product);
+            if (product != null) ShoppingListHolder.getInstance().addItem(product);
         }
     }
 
-    boolean getComesFromSave(){ return this.comesFromSave;}
+    boolean getComesFromSave() {
+        return this.comesFromSave;
+    }
 
-    void setToSaveShop(String name){ this.toSaveShop = name;}
+    void setToSaveShop(String name) {
+        this.toSaveShop = name;
+    }
 
 
 }

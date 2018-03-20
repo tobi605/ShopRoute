@@ -23,10 +23,11 @@ public class ShowRouteActivity extends AppCompatActivity {
     private Product current;
 
     @Override
-    protected void onCreate(Bundle savedInstance){
+    protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         setContentView(R.layout.route_show);
-        if(!ShoppingListHolder.getInstance().isSorted()) ShoppingListHolder.getInstance().sortItems(ShopHolder.getInstance().getShop());
+        if (!ShoppingListHolder.getInstance().isSorted())
+            ShoppingListHolder.getInstance().sortItems(ShopHolder.getInstance().getShop());
         shoppingList = ShoppingListHolder.getInstance().getList();
 
         final TextView currentItemName = findViewById(R.id.current_item_name);
@@ -37,13 +38,13 @@ public class ShowRouteActivity extends AppCompatActivity {
 
         final SharedPreferences preferences = getPreferences(MODE_PRIVATE);
         final SharedPreferences.Editor editor = preferences.edit();
-        if(preferences.getInt(String.valueOf(R.string.saved_list_index),-1)==-1){
-            editor.putInt(String.valueOf(R.string.saved_list_index),0);
+        if (preferences.getInt(String.valueOf(R.string.saved_list_index), -1) == -1) {
+            editor.putInt(String.valueOf(R.string.saved_list_index), 0);
             editor.apply();
         }
 
         builder.setTitle(R.string.dialog_title);
-        if(!ShoppingListHolder.getInstance().getComesFromSave()) {
+        if (!ShoppingListHolder.getInstance().getComesFromSave()) {
             builder.setMultiChoiceItems(new String[]{getApplicationContext().getResources().getString(R.string.save_list_question)},
                     null, new DialogInterface.OnMultiChoiceClickListener() {
                         @Override
@@ -56,9 +57,9 @@ public class ShowRouteActivity extends AppCompatActivity {
         builder.setPositiveButton(R.string.dialog_positive, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                if(ShoppingListHolder.getInstance().getToBeSaved()){
-                    ShoppingListHolder.getInstance().saveListToFile(preferences.getInt(String.valueOf(R.string.saved_list_index),-1), getApplicationContext());
-                    editor.putInt(String.valueOf(R.string.saved_list_index),preferences.getInt(String.valueOf(R.string.saved_list_index),-1)+1);
+                if (ShoppingListHolder.getInstance().getToBeSaved()) {
+                    ShoppingListHolder.getInstance().saveListToFile(preferences.getInt(String.valueOf(R.string.saved_list_index), -1), getApplicationContext());
+                    editor.putInt(String.valueOf(R.string.saved_list_index), preferences.getInt(String.valueOf(R.string.saved_list_index), -1) + 1);
                 }
                 ShoppingListHolder.getInstance().clearList();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -77,17 +78,15 @@ public class ShowRouteActivity extends AppCompatActivity {
         gotItButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(shoppingList.size()==0){
+                if (shoppingList.size() == 0) {
                     currentItemName.setText(R.string.no_item);
                     current = null;
                     dialog.show();
-                }
-                else if(shoppingList.size()==1){
+                } else if (shoppingList.size() == 1) {
                     current = shoppingList.remove(0);
                     arrayAdapter.notifyDataSetChanged();
                     currentItemName.setText(current.toString());
-                }
-                else {
+                } else {
                     current = shoppingList.remove(0);
                     arrayAdapter.notifyDataSetChanged();
                     currentItemName.setText(current.toString());
@@ -97,7 +96,7 @@ public class ShowRouteActivity extends AppCompatActivity {
         postponeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!shoppingList.isEmpty()) {
+                if (!shoppingList.isEmpty()) {
                     shoppingList.add(current);
                     current = shoppingList.remove(0);
                     arrayAdapter.notifyDataSetChanged();

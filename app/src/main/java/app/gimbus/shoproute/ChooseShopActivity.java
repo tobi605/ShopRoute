@@ -27,7 +27,7 @@ public class ChooseShopActivity extends AppCompatActivity {
         Button button = findViewById(R.id.choose_shop_button); //accept choice
 
         List<Shop> shops = ShopInstanceProvider.getAllShops();
-        ArrayAdapter<Shop> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.shop_browse_item , shops);
+        ArrayAdapter<Shop> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.shop_browse_item, shops);
 
 
         shopsList.setAdapter(adapter);

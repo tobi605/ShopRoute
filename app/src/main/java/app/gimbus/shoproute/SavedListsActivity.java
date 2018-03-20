@@ -53,9 +53,11 @@ public class SavedListsActivity extends AppCompatActivity {
         });
     }
 
-    static void setShopAndProducts(List<String> list){ shopAndProducts = list;}
+    static void setShopAndProducts(List<String> list) {
+        shopAndProducts = list;
+    }
 
-    private String[] readFromFile(FileInputStream stream){
+    private String[] readFromFile(FileInputStream stream) {
         String line;
         String[] results = new String[0];
         try {

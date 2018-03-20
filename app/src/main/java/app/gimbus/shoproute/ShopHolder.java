@@ -13,10 +13,15 @@ class ShopHolder {
         return ourInstance;
     }
 
-    private ShopHolder() {}
+    private ShopHolder() {
+    }
 
-    void setShop(Shop shop){ this.shop = shop;}
+    void setShop(Shop shop) {
+        this.shop = shop;
+    }
 
-    Shop getShop(){ return this.shop;}
+    Shop getShop() {
+        return this.shop;
+    }
 
 }

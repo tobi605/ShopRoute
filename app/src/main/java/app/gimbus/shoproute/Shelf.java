@@ -18,17 +18,19 @@ class Shelf {
         neighbours = new ArrayList<>();
     }
 
-    void addProducts(Product... products){
+    void addProducts(Product... products) {
         this.products.addAll(Arrays.asList(products));
     }
 
-    void addNeighbours(Shelf... shelves){
+    void addNeighbours(Shelf... shelves) {
         this.neighbours.addAll(Arrays.asList(shelves));
     }
 
-    ArrayList<Shelf> getNeighbours(){return this.neighbours;}
+    ArrayList<Shelf> getNeighbours() {
+        return this.neighbours;
+    }
 
-    boolean contains(Product product){
+    boolean contains(Product product) {
         return products.contains(product);
     }
 }

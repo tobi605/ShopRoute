@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color">
@@ -14,7 +13,7 @@
         android:textSize="25sp"
         android:layout_marginLeft="5dp"
         android:layout_marginStart="5dp"
-        android:layout_marginBottom="3dp"/>
+        android:layout_marginBottom="3dp" />
 
     <ListView
         android:layout_width="match_parent"
@@ -22,8 +21,7 @@
         android:id="@+id/shop_choice_list"
         android:background="@color/white"
         android:layout_below="@id/available_shops_title"
-        android:layout_above="@id/choose_shop_button">
-    </ListView>
+        android:layout_above="@id/choose_shop_button"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -35,7 +33,6 @@
         android:textColor="@color/white"
         android:padding="5dp"
         android:layout_margin="3dp"
-        android:id="@+id/choose_shop_button"
-        />
+        android:id="@+id/choose_shop_button" />
 
 </RelativeLayout>

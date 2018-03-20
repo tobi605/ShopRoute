@@ -14,21 +14,23 @@ import java.util.List;
 class ShopInstanceProvider {
     //here will be static methods returning shops
     @NonNull
-    private static Shop TestShop(){
+    private static Shop TestShop() {
         Product p1 = new Product("Pomidor");
         Product p2 = new Product("Woda");
         Product p3 = new Product("Czekolada");
         Shelf shelf = new Shelf("Wszystko");
-        shelf.addProducts(p1,p2,p3);
+        shelf.addProducts(p1, p2, p3);
         ArrayList<Product> products = new ArrayList<>();
         ArrayList<Shelf> shelves = new ArrayList<>();
-        products.add(p1); products.add(p2); products.add(p3);
+        products.add(p1);
+        products.add(p2);
+        products.add(p3);
         shelves.add(shelf);
         return new Shop("Biedra", shelves, products);
     }
 
     @NonNull
-    private static Shop TestShop2(){
+    private static Shop TestShop2() {
         String name = "Stonka";
         Product[] products = new Product[]{new Product("Pomidor"),
                 new Product("Kapusta"),
@@ -69,22 +71,22 @@ class ShopInstanceProvider {
         Collections.addAll(productArrayList, products);
         ArrayList<Shelf> shelfArrayList = new ArrayList<>();
         Collections.addAll(shelfArrayList, shelves);
-        return new Shop(name, shelfArrayList,productArrayList);
+        return new Shop(name, shelfArrayList, productArrayList);
     }
 
-    static List<Shop> getAllShops(){
+    static List<Shop> getAllShops() {
         List<Shop> shops = new LinkedList<>();
         shops.add(TestShop());
         shops.add(TestShop2());
         return shops;
     }
 
-    static Shop getShopWithName(String name){
+    static Shop getShopWithName(String name) {
         List<Shop> shops = getAllShops();
         Shop shop = null;
         int i = 0;
-        while (i < shops.size() && shop==null){
-            if(shops.get(i).toString().equals(name)) shop = shops.get(i);
+        while (i < shops.size() && shop == null) {
+            if (shops.get(i).toString().equals(name)) shop = shops.get(i);
             else i++;
         }
         return shop;
