@@ -22,11 +22,14 @@ public class ChooseShopActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_shop);
-        //ShoppingListHolder.getInstance().clearList();
 
-        ListView shopsList = findViewById(R.id.shop_choice_list);
+        ListView shopsList = findViewById(R.id.shop_choice_list); //list of shops
+        Button button = findViewById(R.id.choose_shop_button); //accept choice
+
         List<Shop> shops = ShopInstanceProvider.getAllShops();
         ArrayAdapter<Shop> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.shop_browse_item , shops);
+
+
         shopsList.setAdapter(adapter);
         shopsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -37,7 +40,7 @@ public class ChooseShopActivity extends AppCompatActivity {
                 view.setSelected(true);
             }
         });
-        Button button = findViewById(R.id.choose_shop_button);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

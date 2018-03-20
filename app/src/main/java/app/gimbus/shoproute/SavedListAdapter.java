@@ -1,10 +1,7 @@
 package app.gimbus.shoproute;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
-import android.text.format.DateFormat;
-import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by tobi6 on 12.03.2018.
@@ -24,16 +19,16 @@ import java.util.Set;
 class SavedListAdapter extends ArrayAdapter  {
 
 
-    SavedListAdapter(Context context, List<Pair<String, Set<String>>> lists){
+    SavedListAdapter(Context context, ArrayList<ArrayList<String>> lists){
         super(context, 0, lists);
     }
 
     public View getView(int position, View convertView,@NonNull final ViewGroup parent){
-        final Pair<String, Set<String>> pair = (Pair<String, Set<String>>) getItem(position);
-        Date unparsed = new Date(pair.first);
-        String date = DateFormat.getTimeFormat(getContext()).format(unparsed)+" "+DateFormat.getDateFormat(getContext()).format(unparsed);
+        final List<String> list = (ArrayList<String>) getItem(position);
+        String date = list.get(2)+" "+list.get(1);
         final ArrayList<String> shop = new ArrayList<>();
-        shop.addAll(pair.second);
+        for (int i = 3; i < list.size(); i++)
+            shop.add(list.get(i));
         if(convertView==null){
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.saved_list_element, parent, false);
         }
@@ -55,10 +50,8 @@ class SavedListAdapter extends ArrayAdapter  {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences.Editor edit = getContext().getSharedPreferences(String.valueOf(R.string.preferences), Context.MODE_PRIVATE).edit();
-                edit.remove(pair.first);
-                edit.apply();
-                remove(pair);
+                getContext().deleteFile(list.get(0)+"");
+                remove(list);
                 notifyDataSetChanged();
             }
         });

@@ -1,13 +1,14 @@
 package app.gimbus.shoproute;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 
+import android.content.Context;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.ConcurrentSkipListSet;
 
 /**
  * Created by tobi6 on 15.02.2018.
@@ -92,15 +93,26 @@ class ShoppingListHolder {
     }
 
 
-    void saveList(Context context) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(String.valueOf(R.string.preferences), Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        ConcurrentSkipListSet<String> strings = new ConcurrentSkipListSet<>();
-        strings.add(this.toSaveShop);
-        strings.addAll(this.toSaveList);
-        Date date = Calendar.getInstance().getTime();
-        editor.putStringSet(date.toString(), strings);
-        editor.commit();
+    void saveListToFile(int id, Context context) {
+        String separate = " ";
+        Date date = new Date();
+        String string = "dd-MM-yyyy HH:mm:ss";
+        String dateParsed = android.text.format.DateFormat.format(string, date).toString();
+        try {
+            FileOutputStream output = context.openFileOutput(id+"",Context.MODE_PRIVATE);
+            output.write(dateParsed.getBytes());
+            output.write(separate.getBytes());
+            output.write(this.toSaveShop.getBytes());
+            for (String s : this.toSaveList) {
+                output.write(separate.getBytes());
+                output.write(s.getBytes());
+            }
+            output.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     static void createListFromStrings(List<String> list) {

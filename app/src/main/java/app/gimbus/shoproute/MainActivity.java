@@ -12,10 +12,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
-        //Buttons
+
         Button createListButton = findViewById(R.id.create_list_button);
         Button browseShopsButton = findViewById(R.id.browse_shops_button);
         Button savedLists = findViewById(R.id.saved_lists);
+
         createListButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         browseShopsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         savedLists.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

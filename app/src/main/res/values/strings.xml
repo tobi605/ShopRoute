@@ -28,4 +28,5 @@
     <string name="save_list_question">Zapisać listę?</string>
     <string name="delete_saved">Usuń listę</string>
     <string name="choose_save_list">Wybierz listę</string>
+    <string name="saved_list_index">SavedListIndex</string>
 </resources>

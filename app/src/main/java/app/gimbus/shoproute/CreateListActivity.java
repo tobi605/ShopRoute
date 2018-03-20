@@ -24,14 +24,16 @@ public class CreateListActivity extends AppCompatActivity {
         setContentView(R.layout.list_creator);
 
         ListView productList = findViewById(R.id.list_creator_list);
+        Button previewList = findViewById(R.id.previewListButton); // list preview
+        Button showRoute = findViewById(R.id.showRouteButton); // accept list
+        final AutoCompleteTextView autoCompleteTextView = findViewById(R.id.text_input);
+
         final LinkedList<Product> products = ShopHolder.getInstance().getShop().getProducts();
         final ProductAdapter adapter = new ProductAdapter(getApplicationContext(),products);
-        productList.setAdapter(adapter);
-        Button previewList = findViewById(R.id.previewListButton);
-        Button showRoute = findViewById(R.id.showRouteButton);
         final ArrayAdapter<Product> productArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, products);
-        final AutoCompleteTextView autoCompleteTextView = findViewById(R.id.text_input);
+
         autoCompleteTextView.setAdapter(productArrayAdapter);
+        productList.setAdapter(adapter);
 
         previewList.setOnClickListener(new View.OnClickListener() {
             @Override
